@@ -379,7 +379,7 @@ def test(model, test_loader, gmaker_img, gmaker_mask, args, criterion, device):
 
 if __name__ == "__main__":
     sys.path.append(os.path.abspath('../'))
-    DATA_ROOT = './dataset/'
+    DATA_ROOT = 'dataset/'
     print('DATA_ROOT=', DATA_ROOT)
     (args, cmdline) = parse_args()
     print(args)

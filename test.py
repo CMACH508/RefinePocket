@@ -406,7 +406,7 @@ if __name__ == '__main__':
     test_set = args.test_set
     is_dca = args.is_dca
 
-    DATA_ROOT = './dataset/'
+    DATA_ROOT = 'dataset/'
     ckpt_path = 'checkpoints/pretrained_model.pth.tar'
     
     model.load_state_dict(torch.load(ckpt_path)['model_state_dict'])
