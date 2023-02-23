@@ -18,17 +18,19 @@ Protein binding site prediction is an important prerequisite task of drug discov
 
 ## Dataset
 
-**Train data:** You can download train data ``scPDB`` from here (http://bioinfo-pharma.u-strasbg.fr/scPDB/).
+**Train data:** Train dataset ``scPDB`` can be downloaded from here (http://bioinfo-pharma.u-strasbg.fr/scPDB/).
 
-**Test data:** You can download test data sets  according to the links, `COACH420` (https://github.com/rdk/p2rank-datasets/tree/master/coach420),  `HOLO4k` (https://github.com/rdk/p2rank-datasets/tree/master/holo4k), `SC6K` (https://github.com/devalab/DeepPocket), `PDBbind` (http://www.pdbbind.org.cn/download.php).
-
-Our pre-processed train and test data will be released later.
+**Test data:** Test datasets can be downloaded according to the following links, `COACH420` (https://github.com/rdk/p2rank-datasets/tree/master/coach420),  `HOLO4k` (https://github.com/rdk/p2rank-datasets/tree/master/holo4k), `SC6K` (https://github.com/devalab/DeepPocket), `PDBbind` (http://www.pdbbind.org.cn/download.php).
 
 
 
 ## Data processing
 
 For COACH420, HOLO4K and SC6K, the preprocessing procedure is the same as in [DeepPocket](https://github.com/devalab/DeepPocket). For PDBbind, the refined set of version 2020 is used in our experiments, in which proteins with more than 50% sequence identity to those in ScPDB are removed to avoid data leakage.
+
+
+
+The test datasets preprocessed by us can be downloaded from https://zenodo.org/record/7669660#.Y_dUyS-KEys. Download  coach420.zip, holo4k.zip, sc6k.zip and pdbbind.zip to ``dataset/`` and unzip them. The corresponding type files can be obtained according to the "Preparing Data" step in [DeepPocket](https://github.com/devalab/DeepPocket), which are too large to upload.
 
 
 
@@ -39,13 +41,16 @@ For COACH420, HOLO4K and SC6K, the preprocessing procedure is the same as in [De
 To train RefinePocket from scratch, run the following command:
 
 ```
-cd src
 python train.py
 ```
+
+The details of the parameters are specified in the code.
 
 
 
 ### Test
+
+Download the pretrained_model.pth.tar to ``checkpoints/`` from https://zenodo.org/record/7669660#.Y_dUyS-KEys. 
 
 To test RefinePocekt on COACH420 in terms of DCC and DVO, run the following command:
 
@@ -56,16 +61,34 @@ python test.py --test_set coach420
 To test RefinePocekt on COACH420 in terms of DCA top-n, run the following command:
 
 ```
-python coach_test.py --test_set coach420 --is_dca 1 --rank 0
+python test.py --test_set coach420 --is_dca 1 --rank 0
 ```
 
 To test RefinePocekt on COACH420 in terms of DCA top-n+2, run the following command:
 
 ```
-python coach_test.py --test_set coach420 --is_dca 1 --rank 2
+python test.py --test_set coach420 --is_dca 1 --rank 2
 ```
 
-To test RefinePocekt on HOLO4K, SC6K and PDBbind, modify the parameter  --test_set.
+To test RefinePocekt on HOLO4K and SC6K, modify the parameter  --test_set.
 
 
+
+To test RefinePocekt on PDBbind in terms of DCC and DVO, run the following command:
+
+```
+python test_pdbbind.py --test_set pdbbind
+```
+
+To test RefinePocekt on PDBbind in terms of DCA top-n, run the following command:
+
+```
+python test_pdbbind.py --test_set pdbbind --is_dca 1 --rank 0
+```
+
+To test RefinePocekt on PDBbind in terms of DCA top-n+2, run the following command:
+
+```
+python test_pdbbind.py --test_set pdbbind --is_dca 1 --rank 2
+```
 
