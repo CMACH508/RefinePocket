@@ -30,7 +30,7 @@ For COACH420, HOLO4K and SC6K, the preprocessing procedure is the same as in [De
 
 
 
-The test datasets preprocessed by us can be downloaded from https://zenodo.org/record/7669660#.Y_dUyS-KEys. Download  coach420.zip, holo4k.zip, sc6k.zip and pdbbind.zip to ``dataset/`` and unzip them. The corresponding type files can be obtained according to the "Preparing Data" step in [DeepPocket](https://github.com/devalab/DeepPocket), which are too large to upload.
+The test datasets preprocessed by us can be downloaded from https://zenodo.org/record/7669660#.Y_dUyS-KEys. Download  coach420.zip, holo4k.zip, sc6k.zip and pdbbind.zip to ``dataset/`` and unzip them. The corresponding type files can be obtained according to the "Preparing Data" step in [DeepPocket](https://github.com/devalab/DeepPocket), which are too large to upload. The resulting test type files need to be placed in ``dataset/test_types/``.
 
 
 
@@ -72,7 +72,7 @@ python test.py --test_set coach420 --is_dca 1 --rank 2
 
 To test RefinePocekt on HOLO4K and SC6K, modify the parameter  --test_set.
 
-
+------------------------------------------------------------------------------------------------------------------------------------------
 
 To test RefinePocekt on PDBbind in terms of DCC and DVO, run the following command:
 
