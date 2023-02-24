@@ -30,7 +30,7 @@ For COACH420, HOLO4K and SC6K, the preprocessing procedure is the same as in [De
 
 
 
-The test datasets preprocessed by us can be downloaded from https://zenodo.org/record/7669660#.Y_dUyS-KEys. Download  coach420.zip, holo4k.zip, sc6k.zip and pdbbind.zip to ``dataset/`` and unzip them. The corresponding type files can be obtained according to the "Preparing Data" step in [DeepPocket](https://github.com/devalab/DeepPocket), which are too large to upload. The resulting test type files need to be placed in ``dataset/test_types/``.
+The test datasets preprocessed by us can be downloaded from https://zenodo.org/record/7669660#.Y_dUyS-KEys. Download  coach420.zip, holo4k.zip, sc6k.zip and pdbbind.zip to ``dataset/`` and unzip them. The corresponding type files can be obtained according to the "Preparing Data" step in [DeepPocket](https://github.com/devalab/DeepPocket). We provide the coach420 for test, and you can download from here (https://jbox.sjtu.edu.cn/l/d1BCvD). The resulting test type files need to be placed in ``dataset/test_types/``.
 
 
 
