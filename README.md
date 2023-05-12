@@ -26,7 +26,9 @@ Protein binding site prediction is an important prerequisite task of drug discov
 
 ## Data processing
 
-For COACH420, HOLO4K and SC6K, the preprocessing procedure is the same as in [DeepPocket](https://github.com/devalab/DeepPocket). 
+For COACH420, HOLO4K and SC6K, the preprocessing procedure is the same as in [DeepPocket](https://github.com/devalab/DeepPocket). For PDBbind, the refined set of version 2020 is used in our experiments, in which proteins with more than 50% sequence identity to those in ScPDB are removed to avoid data leakage.
+
+The test datasets preprocessed by us can be downloaded from https://zenodo.org/record/7669660#.Y_dUyS-KEys.
 
 
 
