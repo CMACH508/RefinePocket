@@ -28,7 +28,9 @@ Protein binding site prediction is an important prerequisite task of drug discov
 
 For COACH420, HOLO4K and SC6K, the preprocessing procedure is the same as in [DeepPocket](https://github.com/devalab/DeepPocket). For PDBbind, the refined set of version 2020 is used in our experiments, in which proteins with more than 50% sequence identity to those in ScPDB are removed to avoid data leakage.
 
-The test datasets preprocessed by us can be downloaded from https://zenodo.org/record/7669660#.Y_dUyS-KEys.
+
+
+The test datasets preprocessed by us can be downloaded from https://zenodo.org/record/7669660#.Y_dUyS-KEys. Download  coach420.zip, holo4k.zip, sc6k.zip and pdbbind.zip to ``dataset/`` and unzip them. The corresponding type files can be obtained according to the "Preparing Data" step in [DeepPocket](https://github.com/devalab/DeepPocket), which are too large to upload. The resulting test type files need to be placed in ``dataset/test_types/``.
 
 
 
@@ -88,5 +90,26 @@ To test RefinePocekt on PDBbind in terms of DCA top-n+2, run the following comma
 
 ```
 python test_pdbbind.py --test_set pdbbind --is_dca 1 --rank 2
+```
+
+
+
+## Citation
+
+```
+Y. Liu, P. Li, S. Tu and L. Xu, "RefinePocket: An Attention-Enhanced and Mask-Guided Deep Learning Approach for Protein Binding Site Prediction," in IEEE/ACM Transactions on Computational Biology and Bioinformatics, doi: 10.1109/TCBB.2023.3265640.
+```
+
+```
+@ARTICLE{10098934,
+  author={Liu, Yongchang and Li, Peiying and Tu, Shikui and Xu, Lei},
+  journal={IEEE/ACM Transactions on Computational Biology and Bioinformatics}, 
+  title={RefinePocket: An Attention-Enhanced and Mask-Guided Deep Learning Approach for Protein Binding Site Prediction}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={1-8},
+  doi={10.1109/TCBB.2023.3265640}}
+
 ```
 
